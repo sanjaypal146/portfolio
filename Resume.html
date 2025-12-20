@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjay Kumar Resume</title>
+ 
+  <style>
+    /* /* Base styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafb;
+  line-height: 1.0; /* Further reduced for compactness */
+}
+
+/* Resume container */
+.resume-container {
+  max-width: 56rem; /* max-w-4xl */
+  margin: 0 auto; /* mx-auto */
+  padding: 0.5rem; /* Reduced padding for compactness */
+  background-color: white; /* bg-white */
+}
+
+/* Header styles */
+.header {
+  border-bottom: 4px solid #2563eb; /* border-b-4 border-blue-600 */
+  padding-bottom: 0.5rem; /* Reduced for compactness */
+  margin-bottom: 0.5rem; /* Reduced for compactness */
+}
+
+.name {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: bold; /* font-bold */
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 0.25rem; /* Reduced for compactness */
+}
+
+.contact-info {
+  display: flex; /* flex */
+  flex-wrap: wrap; /* flex-wrap */
+  gap: 1rem; /* gap-4 */
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+}
+
+.contact-item {
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  gap: 0.5rem; /* gap-2 */
+}
+
+.icon {
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+  flex-shrink: 0;
+}
+
+.link {
+  color: #2563eb; /* text-blue-600 */
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #1d4ed8; /* hover:text-blue-600 */
+}
+
+/* Section styles */
+.section {
+  margin-bottom: 0.5rem; /* Further reduced for compactness */
+}
+
+.section-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: bold; /* font-bold */
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 0.25rem; /* Reduced for compactness */
+  border-bottom: 2px solid #d1d5db; /* border-b-2 border-gray-300 */
+  padding-bottom: 0.125rem; /* Reduced for compactness */
+}
+
+/* Skills styles */
+.skills-container {
+  display: flex; /* space-y-3 equivalent */
+  flex-direction: column;
+  gap: 0.25rem; /* Reduced for compactness */
+}
+
+.skill-group {
+  /* No specific styles */
+}
+
+.skill-label {
+  font-weight: 600; /* font-semibold */
+  color: #374151; /* text-gray-700 */
+  margin-bottom: 0.25rem; /* mb-2 */
+}
+
+.skill-tags {
+  display: flex; /* flex */
+  flex-wrap: wrap; /* flex-wrap */
+  gap: 0.5rem; /* gap-2 */
+}
+
+.tag {
+  padding: 0.25rem 0.75rem; /* px-3 py-1 */
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+}
+
+.tech-tag {
+  background-color: #dbeafe; /* bg-blue-100 */
+  color: #1e40af; /* text-blue-800 */
+}
+
+.tool-tag {
+  background-color: #dcfce7; /* bg-green-100 */
+  color: #166534; /* text-green-800 */
+}
+
+/* Experience styles */
+.experience-item {
+  margin-bottom: 0.75rem; /* Reduced for compactness */
+}
+
+.experience-header {
+  display: flex; /* flex */
+  justify-content: space-between; /* justify-between */
+  align-items: flex-start; /* items-start */
+  margin-bottom: 0.125rem; /* Reduced for compactness */
+}
+
+.job-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #1f2937; /* text-gray-800 */
+}
+
+.company {
+  color: #4b5563; /* text-gray-600 */
+}
+
+.location {
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280; /* text-gray-500 */
+}
+
+.experience-dates {
+  text-align: right; /* text-right */
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+}
+
+.italic {
+  font-style: italic;
+}
+
+.responsibilities {
+  list-style-type: disc; /* list-disc */
+  list-style-position: inside; /* list-inside */
+  color: #374151; /* text-gray-700 */
+  margin-left: 1rem; /* ml-4 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem; /* space-y-1 */
+}
+
+.responsibilities.small {
+  font-size: 0.875rem; /* text-sm */
+  gap: 0.125rem; /* space-y-1 */
+}
+
+.description {
+  color: #374151; /* text-gray-700 */
+  margin-left: 1rem; /* ml-4 */
+}
+
+.details {
+  margin-left: 1rem; /* ml-4 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem; /* Reduced for compactness */
+}
+
+.sub-label {
+  font-weight: 600; /* font-semibold */
+  color: #374151; /* text-gray-700 */
+  font-size: 0.875rem; /* text-sm */
+  margin-bottom: 0.125rem; /* mb-1 */
+}
+
+.achievement {
+  color: #374151; /* text-gray-700 */
+  font-size: 0.875rem; /* text-sm */
+  margin-left: 1rem; /* ml-2 */
+}
+
+.skills {
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+  margin-top: 0.25rem; /* mt-2 */
+  margin-left: 1rem; /* ml-4 */
+}
+
+.bold {
+  font-weight: 600; /* font-semibold */
+}
+
+/* Project styles */
+.project-item {
+  margin-bottom: 0.75rem; /* Reduced for compactness */
+}
+
+.tech-stack {
+  /* No specific styles */
+}
+
+.tech-list {
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+}
+
+.description-block {
+  /* No specific styles */
+}
+
+.features {
+  /* No specific styles */
+}
+
+.responsibilities-block {
+  /* No specific styles */
+}
+
+/* Education styles */
+.education-item {
+  margin-bottom: 0.75rem; /* mb-4 */
+}
+
+.education-header {
+  display: flex; /* flex */
+  justify-content: space-between; /* justify-between */
+  align-items: flex-start; /* items-start */
+  margin-bottom: 0.125rem; /* mb-1 */
+}
+
+.degree {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  color: #1f2937; /* text-gray-800 */
+}
+
+.institution {
+  color: #4b5563; /* text-gray-600 */
+}
+
+.education-dates {
+  text-align: right; /* text-right */
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+}
+
+/* Personal information styles */
+.personal-grid {
+  display: grid; /* grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* grid-cols-1 md:grid-cols-2 */
+  gap: 0.5rem; /* Reduced for compactness */
+  color: #374151; /* text-gray-700 */
+}
+
+.personal-column {
+  /* No specific styles */
+}
+
+.personal-item {
+  margin-bottom: 0.125rem; /* Reduced for compactness */
+}
+
+.address {
+  margin-bottom: 0.25rem; /* Reduced for compactness */
+}
+
+.address p {
+  margin: 0;
+  font-size: 0.875rem; /* text-sm */
+}
+
+/* Language table styles */
+.table-container {
+  overflow-x: auto; /* overflow-x-auto */
+}
+
+.language-table {
+  min-width: 100%; /* min-w-full */
+  color: #374151; /* text-gray-700 */
+}
+
+.table-header {
+  background-color: #f3f4f6; /* bg-gray-100 */
+}
+
+.table-cell {
+  padding: 0.125rem 0.5rem; /* Reduced for compactness */
+  text-align: left; /* text-left */
+  font-weight: 600; /* font-semibold */
+}
+
+.table-row {
+  border-bottom: 1px solid #d1d5db; /* border-b */
+}
+
+/* Certification styles */
+.certification-item {
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  gap: 0.25rem; /* gap-2 */
+  color: #374151; /* text-gray-700 */
+}
+
+.bullet {
+  width: 0.5rem; /* w-2 */
+  height: 0.5rem; /* h-2 */
+  background-color: #2563eb; /* bg-blue-600 */
+  border-radius: 50%; /* rounded-full */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 0.5rem; /* p-4 on mobile */
+  }
+
+  .experience-header {
+    flex-direction: column; /* Stack on mobile */
+    align-items: flex-start;
+  }
+
+  .experience-dates {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-dates {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+
+  .personal-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+}
+Add any additional styles here if needed */
+    </style>
+</head>
+<body>
+  <div class="resume-container">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="name">Sanjay Kumar</h1>
+      <div class="contact-info">
+        <div class="contact-item">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+          <a href="mailto:sanjaypal146@gmail.com" class="link">sanjaypal146@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          <span>+91 7836956370</span>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          <span>WZ 921, Palam Village, Delhi 110045</span>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <span>Notice Period: 2 Months</span>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+          </svg>
+          <a href="https://www.linkedin.com/in/sanjaypal146/" target="_blank" rel="noopener noreferrer" class="link">linkedin.com/in/sanjaypal146</a>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+          <a href="https://sanjaypal146.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="link">sanjaypal146.github.io/portfolio/</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-group">
+          <p class="skill-label">Technologies:</p>
+          <div class="skill-tags">
+            <span class="tag tech-tag">.NET Core</span>
+            <span class="tag tech-tag">JavaScript</span>
+            <span class="tag tech-tag">AJAX</span>
+            <span class="tag tech-tag">SQL</span>
+            <span class="tag tech-tag">ASP.NET</span>
+            <span class="tag tech-tag">HTML/CSS</span>
+            <span class="tag tech-tag">MVC</span>
+            <span class="tag tech-tag">C#</span>
+            <span class="tag tech-tag">ADO.NET</span>
+            <span class="tag tech-tag">Entity Framework</span>
+            <span class="tag tech-tag">jQuery</span>
+            <span class="tag tech-tag">Swagger API</span>
+          </div>
+        </div>
+        
+        <div class="skill-group">
+          <p class="skill-label">Tools:</p>
+          <div class="skill-tags">
+            <span class="tag tool-tag">Visual Studio</span>
+            <span class="tag tool-tag">SQL Server Management Studio</span>
+            <span class="tag tool-tag">TFS</span>
+            <span class="tag tool-tag">VS Code</span>
+            <span class="tag tool-tag">Excel</span>
+            <span class="tag tool-tag">Postman</span>
+            <span class="tag tool-tag">Notepad++</span>
+            <span class="tag tool-tag">Log Reader</span>
+            <span class="tag tool-tag">Splunk</span>
+            <span class="tag tool-tag">Slack</span>
+            <span class="tag tool-tag">osTicket</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+      
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">Software Developer</h3>
+            <p class="company">Birdres Technologies</p>
+          </div>
+          <div class="experience-dates">
+            <p>Apr 2024 - Present</p>
+            <p class="italic">Full-time</p>
+          </div>
+        </div>
+        <ul class="responsibilities">
+          <li>Handle customer tickets and provide technical support</li>
+          <li>Perform bug fixes and troubleshooting</li>
+          <li>Manage change requests and implementations</li>
+          <li>Prepare and maintain release documentation</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">Associate Software Developer</h3>
+            <p class="company">ResBird Technologies</p>
+          </div>
+          <div class="experience-dates">
+            <p>Jun 2022 - Mar 2024</p>
+            <p class="italic">Full-time</p>
+          </div>
+        </div>
+        <p class="description">
+          Contributed to software development projects and supported application maintenance activities.
+        </p>
+      </div>
+    </section>
+
+    <!-- Other Experience -->
+    <section class="section">
+      <h2 class="section-title">Other Experience</h2>
+      
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">Information Technology Trainer</h3>
+            <p class="company">INDUS EDUTRAIN PRIVATE LIMITED</p>
+            <p class="location">New Delhi, Delhi, India - On-site</p>
+          </div>
+          <div class="experience-dates">
+            <p>Apr 2022 - May 2022</p>
+            <p class="italic">Full-time · 2 mos</p>
+          </div>
+        </div>
+        <p class="description">
+          Vocational IT/ITES Trainer (RMSA) MHRD
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">Information Technology Trainer</h3>
+            <p class="company">ICA Edu Skills</p>
+            <p class="location">Sarvodaya Bal Vidyalaya No.2, Palam Enclave, New Delhi - On-site</p>
+          </div>
+          <div class="experience-dates">
+            <p>Aug 2016 - Mar 2022</p>
+            <p class="italic">Full-time · 5 yrs 8 mos</p>
+          </div>
+        </div>
+        <div class="details">
+          <p class="description">Vocational IT/ITES Trainer (RMSA) MHRD</p>
+          <p class="sub-label">Responsibilities:</p>
+          <ul class="responsibilities small">
+            <li>Conducted classroom activities and practical work in laboratory/workshop</li>
+            <li>Maintained IT Lab and managed computer systems</li>
+            <li>Organized field visits, educational tours, and guest lectures</li>
+            <li>Performed assessment and certification evaluation of students</li>
+            <li>Maintained comprehensive record keeping of all activities</li>
+          </ul>
+          <p class="sub-label">Achievement:</p>
+          <p class="achievement">Received Letter of Appreciation from Chief Minister of Delhi in 2019 for achieving 100% student results</p>
+          <p class="skills"><span class="bold">Skills:</span> CSS, HTML, Computer Training</p>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">Computer Instructor</h3>
+            <p class="company">Fourth Dimension Solutions Limited</p>
+            <p class="location">Delhi, India - On-site</p>
+          </div>
+          <div class="experience-dates">
+            <p>Nov 2015 - Jul 2016</p>
+            <p class="italic">Full-time · 9 mos</p>
+          </div>
+        </div>
+        <ul class="responsibilities small">
+          <li>Organized, maintained, and managed class systems in proper working condition</li>
+          <li>Taught students and learners to use computers effectively</li>
+          <li>Designed and developed appropriate computer instructional material</li>
+          <li>Managed and monitored student behavior</li>
+          <li>Initiated and implemented systems, procedures, and student management protocols</li>
+        </ul>
+        <p class="skills"><span class="bold">Skills:</span> Microsoft Office, Information and Communications Technology (ICT)</p>
+      </div>
+    </section>
+
+    <!-- Internship -->
+    <section class="section">
+      <h2 class="section-title">Internship Experience</h2>
+      
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">Training Program - MCA Final Semester</h3>
+            <p class="company">Bharat Electronics Ltd. (Central Research Lab)</p>
+            <p class="location">Ghaziabad, India</p>
+          </div>
+          <div class="experience-dates">
+            <p>6 Months</p>
+          </div>
+        </div>
+        <div class="details">
+          <p class="description">
+            Completed comprehensive training program at Central Research Lab during MCA final semester, gaining hands-on experience in electronics and technology systems.
+          </p>
+          <p class="sub-label">Project:</p>
+          <p class="project"><span class="bold">UAV Mission Planner</span> - Involved in the development and implementation of mission planning software for Unmanned Aerial Vehicles (UAV), contributing to critical defense technology projects.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+      <h2 class="section-title">Projects</h2>
+      
+      <div class="project-item">
+        <div class="experience-header">
+          <div>
+            <h3 class="job-title">Front Office Solutions (FOS)</h3>
+            <p class="company">BCD Travel (India) - Offsite</p>
+          </div>
+          <div class="experience-dates">
+            <p>Jun 2022 - Aug 2023</p>
+            <p class="italic">Full-time</p>
+          </div>
+        </div>
+        
+        <div class="details">
+          <div class="tech-stack">
+            <p class="sub-label">Technologies:</p>
+            <p class="tech-list">
+              C#, .NET Core, MVC, JavaScript, WCF, CSS, HTML, jQuery, Ajax, ADO.NET | 
+              Visual Studio 2017 | MS SQL Server 2019
+            </p>
+          </div>
+          
+          <div class="description-block">
+            <p class="sub-label">Description:</p>
+            <p class="description">
+              FOS (Front Office Solutions) is an online booking tool offering business-to-business (B2B) services. 
+              Different Travel Management Company (TMC) agencies use the application to book tickets for travelers 
+              from various corporate clients. The project architecture is designed around two core services: Flight and Hotel.
+            </p>
+          </div>
+          
+          <div class="features">
+            <p class="sub-label">Key Features:</p>
+            <ul class="responsibilities small">
+              <li>Multi-Service Booking platform for Travel Consultancies to book flights and hotels for corporate clients</li>
+              <li>EAGLE Web API Integration for real-time data fetching and up-to-date service information</li>
+              <li>Admin Portal with reporting features for monitoring and tracking agent activities and performance</li>
+            </ul>
+          </div>
+          
+          <div class="responsibilities-block">
+            <p class="sub-label">Responsibilities:</p>
+            <ul class="responsibilities small">
+              <li>Implemented client requirements and new features, ensuring seamless integration and functionality</li>
+              <li>Developed requests and bound responses within the FOS application for accurate data retrieval</li>
+              <li>Managed real-time data integration from airline APIs for applications like FOS and Birdres projects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <h3 class="job-title">Ticket Tracker - ATSR (Amadeus Ticket Sales Report) Tool</h3>
+        </div>
+        
+        <div class="details">
+          <div class="tech-stack">
+            <p class="sub-label">Technologies:</p>
+            <p class="tech-list">
+              C#, .NET Framework, ADO.NET, MS SQL Server, Windows Forms, ASP.NET Web Application
+            </p>
+          </div>
+          
+          <div class="description-block">
+            <p class="sub-label">Description:</p>
+            <p class="description">
+              Amadeus Ticket Sales Report tool is a powerful B2B reporting solution that helps travel agencies track, 
+              summarize, and reconcile their flight bookings. The system details sales, refunds, and payments (cash/credit) 
+              for financial control and accounting, utilizing cryptic commands like TJQ, TJT, TRF, RT, EWD, and TWD to 
+              provide deep insights into transaction volumes, fares, taxes, and commissions. The tool is crucial for 
+              managing sales periods, balancing books, and meeting reporting requirements.
+            </p>
+          </div>
+          
+          <div class="features">
+            <p class="sub-label">Key Features:</p>
+            <ul class="responsibilities small">
+              <li>Multi-agency login system allowing agencies to view and export selective office ID transactions</li>
+              <li>Customizable report columns tailored to specific agency requirements</li>
+              <li>Automated scheduling for office ID/agency data processing</li>
+              <li>Comprehensive transaction tracking including sales, refunds, and payment reconciliation</li>
+            </ul>
+          </div>
+          
+          <div class="responsibilities-block">
+            <p class="sub-label">Responsibilities:</p>
+            <ul class="responsibilities small">
+              <li>Implemented client requirements and developed new features for enhanced functionality</li>
+              <li>Maintained application stability and ensured continuous operation</li>
+              <li>Provided technical support and troubleshooting assistance to clients facing issues</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      
+      <div class="education-item">
+        <div class="education-header">
+          <div>
+            <h3 class="degree">Master of Computer Applications (MCA)</h3>
+            <p class="institution">Annamalai University, Chidambaram</p>
+          </div>
+          <div class="education-dates">
+            <p>2012 - 2015</p>
+            <p class="italic">Full-time</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="education-item">
+        <div class="education-header">
+          <div>
+            <h3 class="degree">Bachelor of Computer Applications (BCA)</h3>
+            <p class="institution">Makhanlal Chaturvedi Rashtriya Patrakarita Evam Sanchar Vishwavidyalaya</p>
+            <p class="location">Bhopal, Madhya Pradesh, India</p>
+          </div>
+          <div class="education-dates">
+            <p>2009 - 2012</p>
+            <p class="italic">Full-time</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="education-item">
+        <div class="education-header">
+          <div>
+            <h3 class="degree">Class XII</h3>
+            <p class="institution">Uttar Pradesh Board</p>
+          </div>
+          <div class="education-dates">
+            <p>2008</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="education-item">
+        <div class="education-header">
+          <div>
+            <h3 class="degree">Class X</h3>
+            <p class="institution">Uttar Pradesh Board</p>
+          </div>
+          <div class="education-dates">
+            <p>2006</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Information -->
+    <section class="section">
+      <h2 class="section-title">Personal Information</h2>
+      
+      <div class="personal-grid">
+        <div class="personal-column">
+          <p class="personal-item"><span class="bold">Date of Birth:</span> 15 October 1992</p>
+          <p class="personal-item"><span class="bold">Marital Status:</span> Married</p>
+          <p class="personal-item"><span class="bold">Category:</span> OBC - Non Creamy</p>
+        </div>
+        <div class="personal-column">
+          <div class="address">
+            <p class="bold">Communication Address:</p>
+            <p>WZ 921, Palam Village</p>
+            <p>Delhi, PIN: 110045</p>
+          </div>
+          <div class="address">
+            <p class="bold">Permanent Address:</p>
+            <p>52, Sushil Nagar, Mavai Road</p>
+            <p>Orai, Dist. Jalaun (U.P.)</p>
+            <p>PIN: 285001</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section">
+      <h2 class="section-title">Languages</h2>
+      
+      <div class="table-container">
+        <table class="language-table">
+          <thead>
+            <tr class="table-header">
+              <th class="table-cell">Language</th>
+              <th class="table-cell">Proficiency</th>
+              <th class="table-cell">Read</th>
+              <th class="table-cell">Write</th>
+              <th class="table-cell">Speak</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row">
+              <td class="table-cell">Hindi</td>
+              <td class="table-cell">Expert</td>
+              <td class="table-cell">✓</td>
+              <td class="table-cell">✓</td>
+              <td class="table-cell">✓</td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell">English</td>
+              <td class="table-cell">Proficient</td>
+              <td class="table-cell">✓</td>
+              <td class="table-cell">✓</td>
+              <td class="table-cell">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Interests -->
+    <section class="section">
+      <h2 class="section-title">Interests</h2>
+      <p class="description">
+        Fundamentals of Cloud Computing, React, Angular, Node.js, for modern web development
+      </p>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section">
+      <h2 class="section-title">Certifications</h2>
+      <div class="certification-item">
+        <div class="bullet"></div>
+        <p>CCC Certificate (NIELIT)</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
