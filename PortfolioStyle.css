@@ -28,7 +28,7 @@ body {
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #ffffff;
     overflow-x: hidden;
     transition: all 0.3s ease;
 }
@@ -172,6 +172,11 @@ body.dark-theme .mobile-menu-btn {
     padding: 100px 20px 50px;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+body.dark-theme .hero {
+    background: inherit; /* or remove if not needed */
 }
 
 .hero::before {
@@ -179,7 +184,7 @@ body.dark-theme .mobile-menu-btn {
     position: absolute;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     top: -200px;
     right: -200px;
@@ -191,11 +196,19 @@ body.dark-theme .mobile-menu-btn {
     position: absolute;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     bottom: -150px;
     left: -150px;
     animation: float 8s ease-in-out infinite;
+}
+
+body.dark-theme .hero::before {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+}
+
+body.dark-theme .hero::after {
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%);
 }
 
 @keyframes float {
@@ -207,8 +220,12 @@ body.dark-theme .mobile-menu-btn {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05));
+    background: transparent;
     z-index: 0;
+}
+
+body.dark-theme .hero-overlay {
+    background: rgba(0,0,0,0.15);
 }
 
 .hero-content {
@@ -253,7 +270,7 @@ body.dark-theme .greeting {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: var(--text-dark);
     line-height: 1.2;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -268,7 +285,7 @@ body.dark-theme .hero-title {
 
 .hero-subtitle {
     font-size: 1.8rem;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 20px;
     font-weight: 600;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -280,7 +297,7 @@ body.dark-theme .hero-subtitle {
 
 .hero-description {
     font-size: 1.1rem;
-    color: #f1f5f9;
+    color: var(--text-dark);
     margin-bottom: 30px;
     line-height: 1.8;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -417,15 +434,20 @@ section.visible {
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+body.dark-theme .section-title {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
 }
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: #64748b;
+    color: var(--text-dark);
 }
 
 body.dark-theme .section-subtitle {
